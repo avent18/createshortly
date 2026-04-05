@@ -5,12 +5,15 @@ import cors from 'cors';
 import authRouter from './Routes/auth.route.js';
 import urlRouter from './Routes/url.route.js';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 
 dotenv.config();
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+const __dirname = path.resolve();
 
 
 app.use(cors(
@@ -27,6 +30,11 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/api/auth', authRouter);
 app.use('/api/url', urlRouter);
+
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
+app.get("/",(_, res)=>{
+    res.sendFile(path.join(__dirname, "frontend","dist", "index.html"));
+});
 
 
 connectDb().then(()=>{

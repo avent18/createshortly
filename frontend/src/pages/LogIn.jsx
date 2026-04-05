@@ -32,7 +32,7 @@ const LogIn = () => {
 
 
     const response = await axios.post(`${serverUrl}/api/auth/login`, form, { withCredentials: true } );
-    console.log(response.data);
+   
     alert("Login successful!");
     navigate("/");
    } catch (error) {
