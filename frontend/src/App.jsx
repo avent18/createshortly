@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import LogIn from "./pages/LogIn.jsx";
 import Home from "./pages/Home.jsx";
 
-export const serverUrl = "http://localhost:5000";
+export const serverUrl = "https://createshortly.onrender.com";
 
 function App() {
   return (
