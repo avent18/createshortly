@@ -1,4 +1,4 @@
-import Url from "../models/url.model.js";
+import Url from "../Models/url.model.js";
 import { encode } from "../utils/util.js";
 
 export const createShortUrl = async (req, res) => {
